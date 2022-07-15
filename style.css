@@ -31,7 +31,7 @@ body {
     color: white;
     font-size: 14px;
     position: relative;
-    padding: 5px 50px;
+    padding: 10px 50px;
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
@@ -54,8 +54,25 @@ body {
 }
 
 #start-game{
-    background-color: rgb(44, 151, 75, 1);
+    background-color: #2c974b;
     border-color: rgba(27,31,36,0.15);
+    color: #ffffff;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 30px;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border-radius: 6px;
+}
+
+#icon-btn{
     color: white;
     font-size: 14px;
     position: relative;
@@ -68,4 +85,27 @@ body {
     vertical-align: middle;
     user-select: none;
     border-radius: 6px;
+}
+
+#svg-filter{
+    filter: invert(99%) sepia(0%) saturate(4204%) hue-rotate(82deg) brightness(117%) contrast(100%);
+    font-size: 14px;
+    line-height: 20px;
+    height: 16px;
+    align-self: center;
+    margin-right: 5px;
+    stroke: #ffffff; 
+    stroke-width: 1px;
+}
+
+.github-icon{
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    stroke: #ffffff; 
+    stroke-width: 1px;
+    align-self: center;
+    font-size: 14px;
+    line-height: 20px;
+    height: 16px;
 }
