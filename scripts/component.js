@@ -36,8 +36,8 @@ class Component {
         return this.y + this.height;
     }
 
-    crashWith(obstacles){
-        return !(
+    catchBug(obstacles){
+        return (
             this.bottom() < obstacles.top() || 
             this.top() > obstacles.bottom() || 
             this.right() < obstacles.left() || 

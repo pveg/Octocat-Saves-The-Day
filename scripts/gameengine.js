@@ -6,7 +6,7 @@ class Game {
         this.player = player;
         this.obstacles = [];
         this.interval = null;
-        this.frames = 0;
+        this.frames = 1000;
         this.isRunning = false;
         this.points = 0;
     }
@@ -63,7 +63,7 @@ class Game {
         } */
     }
 
-    checkGameOver = () =>{
+  /*   checkGameOver = () =>{
         const crashed = this.obstacles.some((obstacles) => {
             return player.crashWith(obstacles);
         });
@@ -71,13 +71,13 @@ class Game {
     if(crashed){
         this.stop()
     };
-    };
+    }; */
 
     score(){
-        this.points += 20;
-        this.ctx.font = '24px sans-serif'
+        let points = this.points;
+        this.ctx.font = '24px SilkscreenNormal'
         this.ctx.fillStyle = 'black';
-        this.ctx.fillText(`Score: ${points}`, 850, 50);
+        this.ctx.fillText(`Score: ${points}`, 500, 50);
 
     }
 
@@ -85,7 +85,7 @@ class Game {
         this.clear();
         this.player.newPos();
         this.player.draw();
-        this.checkGameOver();
+  /*       this.checkGameOver(); */
         this.updateObstacles();
         this.score();
     }

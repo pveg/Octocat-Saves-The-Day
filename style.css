@@ -7,12 +7,19 @@
 
 body {
     background-image: url("docs/assets/images/backgroundimg.png");
+    background-repeat: no-repeat;
     background-color: #ccc;
+}
+
+.title-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
     #title{
         color: rgb(255, 255, 85, 1);
-        font-size: 30px;
+        font-size: 40px;
         align-self: center;
         display: flex;
         justify-content: center;
@@ -21,7 +28,7 @@ body {
     }
     
     #saves-the-day{
-        color:rgb(255, 255, 85, 0.9);
+        color:rgba(170, 255, 85, 0.9);
         font-size: 30px;
         align-self: center;
         display: flex;
