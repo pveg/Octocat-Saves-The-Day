@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
@@ -37,8 +38,14 @@ document.addEventListener('keydown', (e)=>{
         case 'ArrowRight':
             player.speedX += 1;
             break;
+
     };
-})
+
+    if(["ArrowUp","ArrowDown"].indexOf(e.code) > -1) {
+        e.preventDefault()
+    }
+}, false);
+
 
 
 document.addEventListener('keyup', (e) => {

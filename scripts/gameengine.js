@@ -78,8 +78,10 @@ class Game {
         this.ctx.font = '24px SilkscreenNormal'
         this.ctx.fillStyle = 'black';
         this.ctx.fillText(`Score: ${points}`, 500, 50);
-
-    }
+        if (catchBug()){
+            points += 20;
+        }
+    };
 
     updateGameArea = () => {
         this.clear();
