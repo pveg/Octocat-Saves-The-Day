@@ -5,8 +5,8 @@ const ctx = canvas.getContext('2d');
 const cWidth = canvas.width;
 const cHeight = canvas.height;
 
-//creating the player
-const player = new Component(30, 30, 'red', 0, 110, ctx);
+//creates the player
+const player = new Component(30, 30, 'white', 335, 325, ctx);
 
 //creating the game
 let game;

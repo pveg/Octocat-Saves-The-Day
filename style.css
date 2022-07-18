@@ -4,6 +4,12 @@
     src: url(./docs/assets/Silkscreen/slkscrb.ttf);
 }
 
+#canvas{
+    background-image: url(./docs/assets/images/background2.jpeg);
+    background-size: 120%;
+    background-position: center;
+    border: 2px solid rgba(9, 179, 134, 0.8);
+}
 
     body {
         background-image: url("docs/assets/images/backgroundimg.png");

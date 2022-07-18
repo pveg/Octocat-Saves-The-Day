@@ -18,13 +18,12 @@ class Game {
 
     clear(){
         this.ctx.clearRect(0,0,this.width, this.height);
-
     }
 
     reset = () => {
-        this.player.x=350;
-        this.player.y=10;
-        this.frames=0;
+        this.player.x=335;
+        this.player.y=325;
+        this.frames=31 * 60;
         this.obstacles = [];
         this.points = 0;
         this.start();
@@ -34,18 +33,21 @@ class Game {
         if(this.frames === 0){
             clearInterval(this.interval);
             this.isRunning = false;
+                if(this.points <= 20){
+                this.reset();
+                }
         };
     }
 
 
     updateObstacles(){
-        if(this.frames % 100 === 0){
+        if(this.frames % 50 === 0){
             this.obstacles.push(
-                new Component(20, 20, 'green', Math.floor(Math.random() * this.width) - 20, Math.floor(Math.random() * this.height) - 20, this.ctx)
+                new Component(30, 30, 'green', Math.floor(Math.random() * this.width) - 30, Math.floor(Math.random() * this.height) - 30, this.ctx)
                 )
         }
         for(let i = 0; i < this.obstacles.length; i++){
-            this.obstacles[i].x -= 1
+            this.obstacles[i].y += 1
             this.obstacles[i].draw();
     };
     
@@ -63,19 +65,20 @@ class Game {
         this.ctx.font = '24px SilkscreenNormal'
         this.ctx.fillStyle = 'black';
         this.ctx.fillText(`Score: ${points}`, 500, 80);
-        if (catchBug(this.obstacles)){
+/*         if (catchBug()){
             points += 20;
-        }
+            console.log('Catching bug');
+        } */
     };
 
     updateGameArea = () => {
         this.frames--;
         game.stop();
         this.clear();
+        this.updateObstacles();
         this.player.newPos();
         this.player.draw();
   /*       this.checkGameOver(); */
-        this.updateObstacles();
         this.timer();
         this.score();
     }

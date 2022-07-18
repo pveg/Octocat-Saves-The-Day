@@ -29,7 +29,6 @@ class Component {
        
     }
 
-
     draw(){
         this.ctx.fillStyle = this.color;
         this.ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -52,12 +51,10 @@ class Component {
     }
 
     catchBug(obstacles){
-        return (
-            this.bottom() < obstacles.top() || 
-            this.top() > obstacles.bottom() || 
-            this.right() < obstacles.left() || 
-            this.left() > obstacles.right()
-            );
+        if(this.x === obstacles.x && this.y === obstacles.y){
+            return true;
+        }
+        return false;
     }
 
 }
