@@ -6,7 +6,7 @@ class Game {
         this.player = player;
         this.obstacles = [];
         this.interval = null;
-        this.frames = 30 * 60;
+        this.frames = 31 * 60;
         this.isRunning = false;
         this.points = 0;
         this.color = color;
@@ -63,9 +63,9 @@ class Game {
         this.ctx.font = '24px SilkscreenNormal'
         this.ctx.fillStyle = 'black';
         this.ctx.fillText(`Score: ${points}`, 500, 80);
-/*         if (catchBug()){
+        if (catchBug(this.obstacles)){
             points += 20;
-        } */
+        }
     };
 
     updateGameArea = () => {
