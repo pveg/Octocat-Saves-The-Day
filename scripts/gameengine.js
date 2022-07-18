@@ -31,8 +31,10 @@ class Game {
     };
 
     stop(){
-        clearInterval(this.interval);
-        this.isRunning = false;
+        if(this.frames === 0){
+            clearInterval(this.interval);
+            this.isRunning = false;
+        };
     }
 
 
@@ -49,24 +51,32 @@ class Game {
     
     };
 
-    score(){
-        let points = this.points;
+    timer(){
         let timer = Math.floor(this.frames / 60) 
         this.ctx.font = '24px SilkscreenNormal'
         this.ctx.fillStyle = 'black';
         this.ctx.fillText(`Time: ${timer}`, 500, 50);
-        if (catchBug()){
+    };
+
+    score(){
+        let points = this.points;
+        this.ctx.font = '24px SilkscreenNormal'
+        this.ctx.fillStyle = 'black';
+        this.ctx.fillText(`Score: ${points}`, 500, 80);
+/*         if (catchBug()){
             points += 20;
-        }
+        } */
     };
 
     updateGameArea = () => {
-        this.frames--
+        this.frames--;
+        game.stop();
         this.clear();
         this.player.newPos();
         this.player.draw();
   /*       this.checkGameOver(); */
         this.updateObstacles();
+        this.timer();
         this.score();
     }
 
