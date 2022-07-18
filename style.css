@@ -5,17 +5,17 @@
 }
 
 
-body {
-    background-image: url("docs/assets/images/backgroundimg.png");
-    background-repeat: no-repeat;
-    background-color: #ccc;
-}
+    body {
+        background-image: url("docs/assets/images/backgroundimg.png");
+        background-repeat: no-repeat;
+        background-color: #ccc;
+    }
 
-.title-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .title-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     #title{
         color: rgb(255, 255, 85, 1);

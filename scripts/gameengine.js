@@ -1,14 +1,15 @@
 class Game {
-    constructor(ctx, width, height, player){
+    constructor(ctx, width, height, player, color){
         this.ctx = ctx;
         this.width = width;
         this.height = height;
         this.player = player;
         this.obstacles = [];
         this.interval = null;
-        this.frames = 1000;
+        this.frames = 30 * 60;
         this.isRunning = false;
         this.points = 0;
+        this.color = color;
     }
     start(){
         this.interval = setInterval(this.updateGameArea, 1000 / 60) //60fps (1000 / 60)
@@ -36,54 +37,31 @@ class Game {
 
 
     updateObstacles(){
+        if(this.frames % 100 === 0){
+            this.obstacles.push(
+                new Component(20, 20, 'green', Math.floor(Math.random() * this.width) - 20, Math.floor(Math.random() * this.height) - 20, this.ctx)
+                )
+        }
         for(let i = 0; i < this.obstacles.length; i++){
             this.obstacles[i].x -= 1
             this.obstacles[i].draw();
-        };
-
-/*         this.frames++
-        if(this.frames % 120 === 0){
-            let x = this.width;
-
-            let minHeight = 20;
-
-            let maxHeight = 200;
-
-            let height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
-
-            let minGap = 50;
-            let maxGap = 200;
-
-            let gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
-
-            this.obstacles.push(new Component(20, height, 'green', x, 0, this.ctx))
-
-            this.obstacles.push(new Component(20, x -  height - gap, 'aquamarine', x, height + gap, this.ctx))
-
-        } */
-    }
-
-  /*   checkGameOver = () =>{
-        const crashed = this.obstacles.some((obstacles) => {
-            return player.crashWith(obstacles);
-        });
-
-    if(crashed){
-        this.stop()
     };
-    }; */
+    
+    };
 
     score(){
         let points = this.points;
+        let timer = Math.floor(this.frames / 60) 
         this.ctx.font = '24px SilkscreenNormal'
         this.ctx.fillStyle = 'black';
-        this.ctx.fillText(`Score: ${points}`, 500, 50);
+        this.ctx.fillText(`Time: ${timer}`, 500, 50);
         if (catchBug()){
             points += 20;
         }
     };
 
     updateGameArea = () => {
+        this.frames--
         this.clear();
         this.player.newPos();
         this.player.draw();
@@ -92,4 +70,4 @@ class Game {
         this.score();
     }
 
-};
+}

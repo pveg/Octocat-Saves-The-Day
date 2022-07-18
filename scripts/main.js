@@ -12,7 +12,6 @@ const player = new Component(30, 30, 'red', 0, 110, ctx);
 let game;
 
 /* game.start(); */
-
 const startBtn = document.getElementById('start-game');
 
 startBtn.addEventListener('click', ()=>{
@@ -28,7 +27,7 @@ document.addEventListener('keydown', (e)=>{
     switch(e.code){
         case 'ArrowUp':
             player.speedY -= 1;
-            break;
+         break;
         case 'ArrowDown':
             player.speedY += 1;
             break;
