@@ -56,7 +56,7 @@
         background-color: rgba(204, 204, 204, .5);
     }
     
-    #difficulty-button{
+    #difficulty-button-div{
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -83,6 +83,10 @@
         align-items: center;
         align-content: space-evenly;
         font-family: SilkscreenNormal;
+    }
+
+    .difficulty-btn:focus{
+        background-color: rgb(12, 65, 28);
     }
     
     #btn-div{
@@ -113,6 +117,10 @@
         user-select: none;
         border-radius: 6px;
         font-family: SilkscreenNormal;
+    }
+
+    #start-game:active{
+        background-color: rgb(4, 31, 12);
     }
     
     #icon-btn{
