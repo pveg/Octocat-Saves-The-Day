@@ -8,15 +8,17 @@ const cHeight = canvas.height;
 //creates the player
 const player = new Component(30, 30, 'white', 335, 325, ctx);
 
+      
 //creating the game
 let game;
+let difficulty = 0;
 
 /* game.start(); */
 const startBtn = document.getElementById('start-game');
 
 startBtn.addEventListener('click', ()=>{
     if (!game){
-    game = new Game(ctx, cWidth,cHeight, player);
+    game = new Game(ctx, cWidth,cHeight, player, difficulty);
     game.start();
     } else if (game && !game.isRunning){
         game.reset();
@@ -51,4 +53,21 @@ document.addEventListener('keyup', (e) => {
     player.speedX = 0;
     player.speedY = 0;
 
+});
+
+// game difficulties
+
+let easy = document.getElementById('easy');
+let medium = document.getElementById('medium');
+let hard = document.getElementById('hard');
+
+easy.addEventListener('click', ()=>{
+        difficulty = 50;
+        console.log('Hello!')
+    });
+medium.addEventListener('click', ()=>{
+        difficulty = 100;
+});
+hard.addEventListener('click', ()=>{
+        difficulty = 150;
 });

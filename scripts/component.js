@@ -8,7 +8,13 @@ class Component {
         this.ctx = ctx;
         this.speedX = 0;
         this.speedY = 0;
-    }
+        
+
+        const img = new Image();
+        img.addEventListener('load', () => {});
+        img.src = './docs/assets/images/octocat.gif'
+        this.img = img;
+    };
 
     newPos(){
             this.x += this.speedX;
@@ -21,12 +27,15 @@ class Component {
             this.y = 0;
         }
         if(this.x < 0){
-            this.x = canvas.width;
+            this.x = canvas.width; 
         }
         if(this.y < 0){
             this.y = canvas.height;
-        }
-       
+        }    
+    }
+
+    playerDraw(){
+        this.ctx.drawImage(this.img, this.x, this.y, 50, 50);
     }
 
     draw(){
@@ -50,11 +59,13 @@ class Component {
         return this.y + this.height;
     }
 
-    catchBug(obstacles){
-        if(this.x === obstacles.x && this.y === obstacles.y){
-            return true;
-        }
-        return false;
+    crashWith(obstacles){
+        return !(
+            this.bottom() < obstacles.top() || 
+            this.top() > obstacles.bottom() || 
+            this.right() < obstacles.left() || 
+            this.left() > obstacles.right()
+            );
     }
 
 }

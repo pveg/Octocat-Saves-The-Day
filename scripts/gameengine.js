@@ -1,5 +1,5 @@
 class Game {
-    constructor(ctx, width, height, player, color){
+    constructor(ctx, width, height, player, difficulty ){
         this.ctx = ctx;
         this.width = width;
         this.height = height;
@@ -9,7 +9,7 @@ class Game {
         this.frames = 31 * 60;
         this.isRunning = false;
         this.points = 0;
-        this.color = color;
+        this.difficulty = difficulty;
     }
     start(){
         this.interval = setInterval(this.updateGameArea, 1000 / 60) //60fps (1000 / 60)
@@ -21,11 +21,12 @@ class Game {
     }
 
     reset = () => {
+        this.obstacles = [];
         this.player.x=335;
         this.player.y=325;
         this.frames=31 * 60;
-        this.obstacles = [];
         this.points = 0;
+        this.difficulty = 0;
         this.start();
     };
 
@@ -33,15 +34,13 @@ class Game {
         if(this.frames === 0){
             clearInterval(this.interval);
             this.isRunning = false;
-                if(this.points <= 20){
-                this.reset();
-                }
-        };
-    }
+        }
+};
 
 
     updateObstacles(){
-        if(this.frames % 50 === 0){
+        console.log(this.difficulty)
+        if(this.frames % this.difficulty === 0){
             this.obstacles.push(
                 new Component(30, 30, 'green', Math.floor(Math.random() * this.width) - 30, Math.floor(Math.random() * this.height) - 30, this.ctx)
                 )
@@ -50,7 +49,20 @@ class Game {
             this.obstacles[i].y += 1
             this.obstacles[i].draw();
     };
-    
+    };
+
+
+    checkPoint = () =>{
+        const crashed = this.obstacles.some((obstacles) => {
+
+        if( player.crashWith(obstacles)){
+            this.obstacles.splice(this.obstacles.indexOf(obstacles), 1);
+            return true;
+        };
+        });
+        if(crashed){
+            this.points++
+    };
     };
 
     timer(){
@@ -65,20 +77,16 @@ class Game {
         this.ctx.font = '24px SilkscreenNormal'
         this.ctx.fillStyle = 'black';
         this.ctx.fillText(`Score: ${points}`, 500, 80);
-/*         if (catchBug()){
-            points += 20;
-            console.log('Catching bug');
-        } */
     };
 
     updateGameArea = () => {
         this.frames--;
-        game.stop();
+        this.stop();
         this.clear();
         this.updateObstacles();
         this.player.newPos();
-        this.player.draw();
-  /*       this.checkGameOver(); */
+        this.player.playerDraw();
+        this.checkPoint();
         this.timer();
         this.score();
     }
