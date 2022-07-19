@@ -65,10 +65,10 @@ easy.addEventListener('click', ()=>{
         difficulty;
     });
 medium.addEventListener('click', ()=>{
-        difficulty = 100;
+        difficulty = 70;
 });
 hard.addEventListener('click', ()=>{
-        difficulty = 150;
+        difficulty = 90;
 });
 
 

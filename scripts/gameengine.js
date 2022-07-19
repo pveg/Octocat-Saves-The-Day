@@ -1,3 +1,4 @@
+
 class Game {
     constructor(ctx, width, height, player, difficulty ){
         this.ctx = ctx;
@@ -37,18 +38,27 @@ class Game {
         }
 };
 
-
     updateObstacles(){
         if(this.frames % this.difficulty === 0){
             this.obstacles.push(
-                new Component(30, 30, 'green', Math.floor(Math.random() * this.width) - 30, Math.floor(Math.random() * this.height) - 30, this.ctx)
+                new Component(30, 30, 'green', Math.floor(Math.random() * this.width) - 30, 10 - 30, this.ctx)
                 )
         }
         for(let i = 0; i < this.obstacles.length; i++){
-            this.obstacles[i].y += 1
-            this.obstacles[i].enemieDraw();
-    };
-    };
+            if(this.difficulty === 50){
+                this.obstacles[i].y += 2
+                this.obstacles[i].enemieDraw();
+            }
+            if(this.difficulty === 70){
+                this.obstacles[i].y += 2
+                this.obstacles[i].enemieDraw();
+            }
+            if(this.difficulty === 90){
+                this.obstacles[i].y += 3
+                this.obstacles[i].enemieDraw();
+            }
+        }
+        }
 
 
     checkPoint = () =>{
