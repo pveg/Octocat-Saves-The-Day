@@ -39,7 +39,6 @@ class Game {
 
 
     updateObstacles(){
-        console.log(this.difficulty)
         if(this.frames % this.difficulty === 0){
             this.obstacles.push(
                 new Component(30, 30, 'green', Math.floor(Math.random() * this.width) - 30, Math.floor(Math.random() * this.height) - 30, this.ctx)

@@ -11,7 +11,7 @@ const player = new Component(30, 30, 'white', 335, 325, ctx);
       
 //creating the game
 let game;
-let difficulty = 0;
+let difficulty = 50;
 
 /* game.start(); */
 const startBtn = document.getElementById('start-game');
@@ -62,8 +62,7 @@ let medium = document.getElementById('medium');
 let hard = document.getElementById('hard');
 
 easy.addEventListener('click', ()=>{
-        difficulty = 50;
-        console.log('Hello!')
+        difficulty;
     });
 medium.addEventListener('click', ()=>{
         difficulty = 100;
