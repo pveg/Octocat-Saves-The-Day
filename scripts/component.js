@@ -14,6 +14,11 @@ class Component {
         img.addEventListener('load', () => {});
         img.src = './docs/assets/images/octocat.gif'
         this.img = img;
+
+        const img2 = new Image();
+        img2.addEventListener('load', () => {});
+        img2.src = './docs/assets/images/bug1.png'
+        this.img2 = img2;
     };
 
     newPos(){
@@ -35,12 +40,11 @@ class Component {
     }
 
     playerDraw(){
-        this.ctx.drawImage(this.img, this.x, this.y, 50, 50);
+        this.ctx.drawImage(this.img, this.x, this.y, 80, 80);
     }
 
-    draw(){
-        this.ctx.fillStyle = this.color;
-        this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    enemieDraw(){
+        this.ctx.drawImage(this.img2, this.x, this.y, 80, 80);
     }
 
     left(){

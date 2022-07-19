@@ -6,7 +6,7 @@ const cWidth = canvas.width;
 const cHeight = canvas.height;
 
 //creates the player
-const player = new Component(30, 30, 'white', 335, 325, ctx);
+const player = new Component(30, 30, 'white', 310, 290, ctx);
 
       
 //creating the game

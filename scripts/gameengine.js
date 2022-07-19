@@ -46,7 +46,7 @@ class Game {
         }
         for(let i = 0; i < this.obstacles.length; i++){
             this.obstacles[i].y += 1
-            this.obstacles[i].draw();
+            this.obstacles[i].enemieDraw();
     };
     };
 
