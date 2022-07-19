@@ -22,8 +22,8 @@ class Game {
 
     reset = () => {
         this.obstacles = [];
-        this.player.x=335;
-        this.player.y=325;
+        this.player.x=310;
+        this.player.y=290;
         this.frames=31 * 60;
         this.points = 0;
         this.difficulty = 0;
@@ -78,6 +78,14 @@ class Game {
         this.ctx.fillText(`Score: ${points}`, 500, 80);
     };
 
+    printGameOver(){
+        if(this.isRunning === false){
+        this.ctx.font = '70px SilkscreenNormal'
+        this.ctx.fillStyle = 'green';
+        this.ctx.fillText(`Game Over`, 100, 250);
+        }
+    }
+
     updateGameArea = () => {
         this.frames--;
         this.stop();
@@ -88,6 +96,7 @@ class Game {
         this.checkPoint();
         this.timer();
         this.score();
+        this.printGameOver()
     }
 
 }

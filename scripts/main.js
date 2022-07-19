@@ -70,3 +70,6 @@ medium.addEventListener('click', ()=>{
 hard.addEventListener('click', ()=>{
         difficulty = 150;
 });
+
+
+/* localStorage.setItem('name', `${game.score}`); */
