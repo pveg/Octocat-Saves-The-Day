@@ -12,6 +12,7 @@ class Game {
         this.points = 0;
         this.difficulty = difficulty;
     }
+
     start(){
         this.interval = setInterval(this.updateGameArea, 1000 / 60) //60fps (1000 / 60)
         this.isRunning = true;
@@ -36,7 +37,7 @@ class Game {
             clearInterval(this.interval);
             this.isRunning = false;
         }
-};
+    };
 
     updateObstacles(){
         if(this.frames % this.difficulty === 0){
@@ -44,6 +45,7 @@ class Game {
                 new Component(30, 30, 'green', Math.floor(Math.random() * this.width) - 30, 10 - 30, this.ctx)
                 )
         }
+
         for(let i = 0; i < this.obstacles.length; i++){
             if(this.difficulty === 50){
                 this.obstacles[i].y += 2
@@ -57,32 +59,22 @@ class Game {
                 this.obstacles[i].y += 4
                 this.obstacles[i].enemieDraw();
             }
+
         }
     };
 
 
     checkPoint = () =>{
         const crashed = this.obstacles.some((obstacles) => {
-
         if( player.crashWith(obstacles)){
             this.obstacles.splice(this.obstacles.indexOf(obstacles), 1);
             return true;
         };
-        });
+    });
         if(crashed){
             this.points++
-    };
-    };
-
-    instructions(){
-        if(this.interval===null){
-        this.ctx.font = '50px SilkscreenNormal'
-        this.ctx.fillStyle = 'black';
-        this.ctx.fillText(`Press the arrow keys to move`, 100, 50);
-        this.ctx.fillText(`Press the spacebar to start`, 100, 75);
-        this.ctx.fillText(`Press the spacebar to restart`, 100, 100);
         };
-    }
+    };
 
     timer(){
         let timer = Math.floor(this.frames / 60) 
@@ -108,13 +100,12 @@ class Game {
         if(this.isRunning === false && this.points >= 20){
             this.ctx.font = '70px SilkscreenNormal'
             this.ctx.fillStyle = 'green';
-            this.ctx.fillText(`You won!`, 135, 250);
+            this.ctx.fillText(`You win!`, 135, 250);
         }
 
-    }
+    };
 
     updateGameArea = () => {
-        this.instructions();
         this.frames--;
         this.stop();
         this.clear();

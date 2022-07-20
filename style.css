@@ -23,24 +23,24 @@
         align-items: center;
     }
 
-    #title{
-        color: rgb(255, 255, 85, 1);
-        font-size: 40px;
-        align-self: center;
+    #logo-id{
+        width: 250px; 
+        height: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: SilkscreenNormal;
-    }
+        align-self: center;
+        margin-left: 585px;
+}
     
     #saves-the-day{
-        color:rgba(170, 255, 85, 0.9);
-        font-size: 30px;
+        height: 100px;
+        width: 190px;
         align-self: center;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: SilkscreenNormal;
+        margin-left: 615px;
     }
     
     #canvas-id{
