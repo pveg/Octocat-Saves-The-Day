@@ -49,16 +49,16 @@ class Game {
                 this.obstacles[i].y += 2
                 this.obstacles[i].enemieDraw();
             }
-            if(this.difficulty === 70){
+            if(this.difficulty === 60){
                 this.obstacles[i].y += 2
                 this.obstacles[i].enemieDraw();
             }
-            if(this.difficulty === 90){
-                this.obstacles[i].y += 3
+            if(this.difficulty === 70){
+                this.obstacles[i].y += 4
                 this.obstacles[i].enemieDraw();
             }
         }
-        }
+    };
 
 
     checkPoint = () =>{
@@ -73,6 +73,16 @@ class Game {
             this.points++
     };
     };
+
+    instructions(){
+        if(this.interval===null){
+        this.ctx.font = '50px SilkscreenNormal'
+        this.ctx.fillStyle = 'black';
+        this.ctx.fillText(`Press the arrow keys to move`, 100, 50);
+        this.ctx.fillText(`Press the spacebar to start`, 100, 75);
+        this.ctx.fillText(`Press the spacebar to restart`, 100, 100);
+        };
+    }
 
     timer(){
         let timer = Math.floor(this.frames / 60) 
@@ -89,14 +99,22 @@ class Game {
     };
 
     printGameOver(){
-        if(this.isRunning === false){
-        this.ctx.font = '70px SilkscreenNormal'
-        this.ctx.fillStyle = 'green';
-        this.ctx.fillText(`Game Over`, 100, 250);
+        if(this.isRunning === false && this.points < 20){
+            this.ctx.font = '70px SilkscreenNormal'
+            this.ctx.fillStyle = 'green';
+            this.ctx.fillText(`Game Over`, 100, 250);
         }
+
+        if(this.isRunning === false && this.points >= 20){
+            this.ctx.font = '70px SilkscreenNormal'
+            this.ctx.fillStyle = 'green';
+            this.ctx.fillText(`You won!`, 135, 250);
+        }
+
     }
 
     updateGameArea = () => {
+        this.instructions();
         this.frames--;
         this.stop();
         this.clear();
