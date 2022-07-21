@@ -16,6 +16,8 @@ class Game {
     start(){
         this.interval = setInterval(this.updateGameArea, 1000 / 60) //60fps (1000 / 60)
         this.isRunning = true;
+        lost.pause();
+        win.pause();
         song.play();
     }
 
@@ -24,8 +26,6 @@ class Game {
     }
 
     reset = () => {
-        lost.stop();
-        win.stop();
         this.obstacles = [];
         this.player.x=310;
         this.player.y=290;
