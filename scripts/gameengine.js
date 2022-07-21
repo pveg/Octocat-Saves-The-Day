@@ -24,6 +24,8 @@ class Game {
     }
 
     reset = () => {
+        lost.stop();
+        win.stop();
         this.obstacles = [];
         this.player.x=310;
         this.player.y=290;
@@ -96,12 +98,14 @@ class Game {
             this.ctx.font = '70px SilkscreenNormal'
             this.ctx.fillStyle = 'green';
             this.ctx.fillText(`Game Over`, 100, 250);
+            lost.play();
         }
 
         if(this.isRunning === false && this.points >= 20){
             this.ctx.font = '70px SilkscreenNormal'
             this.ctx.fillStyle = 'green';
             this.ctx.fillText(`You win!`, 135, 250);
+            win.play();
         }
 
     };

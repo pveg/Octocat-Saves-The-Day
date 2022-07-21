@@ -22,6 +22,7 @@ showMenu.style.display = 'none';
 playButton.addEventListener('click', () => {
     hiddenMenu.style.display = 'none';
     showMenu.style.display = 'block';
+    beat.play();
 });
 
 /* game.start(); */
@@ -33,7 +34,8 @@ startBtn.addEventListener('click', ()=>{
     game.start();
     } else if (game && !game.isRunning){
         game.reset();
-    };
+    }
+    beat.pause();
 });
 
 document.addEventListener('keydown', (e)=>{
@@ -82,5 +84,14 @@ hard.addEventListener('click', ()=>{
         difficulty = 70;
 });
 
-let song = new Audio("docs/assets/sounds/Untitled.wav");
+let song = new Audio("docs/assets/sounds/Game.wav");
 song.loop = true;
+
+let lost = new Audio("docs/assets/sounds/lost.wav");
+lost.loop = false;
+
+let win = new Audio("docs/assets/sounds/quebbels.wav");
+win.loop = false;
+
+let beat = new Audio("docs/assets/sounds/beat.wav");
+beat.loop = true;
