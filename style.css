@@ -4,10 +4,23 @@
     src: url(./docs/assets/fonts/Silkscreen/slkscrb.ttf);
 }
 
+
+@keyframes octocat-wave {
+    0%, 100% { transform: rotate(0) }
+    20%, 60% { transform: rotate(-25deg) }
+    40%, 80% { transform: rotate(10deg) }
+  }
+
+  .github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+
 body {
     background-image: url("docs/assets/images/backgroundimg.png");
-    background-size:cover;
+    background-attachment: fixed;
+    background-size: cover;
     background-color: #ccc;
+    margin: 0;
 }
 
 #canvas{
@@ -18,11 +31,7 @@ body {
 }
 
 #hidden-id{
-    background-image: url("docs/assets/images/backgroundimg.png");
-    background-size: cover;
-    position:fixed;
-    background-position: center;
-    background-color: #ccc;
+    background-color: rgb(204, 204, 204, 0.3);
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -31,7 +40,7 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
-    }
+}
 
 #octocat-gif{
     width: 130px;
@@ -39,11 +48,17 @@ body {
     margin-bottom: 20px;
 }
 
+#arrow-keys-image{
+    width: 100px;
+    height: 70px;
+    margin-bottom: 0px;
+}
+
 .hidden-style{
     font-family: SilkscreenNormal;
     color: white;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-    margin-top: 100px;
+    margin-top: 10px;
     font-size: 2.5em;
 }
 
@@ -69,7 +84,7 @@ body {
     color: white;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     text-align: center;
-    margin: 50px 120px 20px 120px;
+    margin: 30px 120px 50px 120px;
     font-size: 2em;
 }
 

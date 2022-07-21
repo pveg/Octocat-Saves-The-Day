@@ -10,39 +10,52 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>Octocat</title>
+    
 </head>
 <body>
 
 <div id="hidden-id">
+    <img id="octocat-gif" src="./docs/assets/images/octocat.gif" alt="Octocat animated image">
     <h1 class="hidden-style"> Welcome to Octocat Saves The Day</h1>
+    <img id ="arrow-keys-image" src="docs/assets/images/kindpng_3429827.png" alt="Keyboard arrow key illustration">
     <h2 id="hidden-h2" class="hidden-style">Use the arrow keys to move and catch as many bug as you can before the time runs out!</h2>
-    <img id="octocat-gif" src="./docs/assets/images/octocat.gif" alt="">
-    <button id="lets-play-btn" class="hidden-id"> Play!</button>
+    <button id="lets-play-btn" class="hidden-id" alt="Button the exit introduction screen"> Play!</button>
 </div>
 
 <div id="show-menu">
+
+<a href="https://github.com/pveg/Octocat-Saves-The-Day" target="_blank" class="github-corner" aria-label="View source on Github">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill: black; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+
 <div class="title-div">
-<img id= "logo-id" src="./docs/assets/images/octocatlogo.png" alt="">
+<img id= "logo-id" src="./docs/assets/images/octocatlogo.png" alt="Octocat 8 bit style logo">
 </div>
 
- <div id="canvas-id"> 
+<div id="canvas-id"> 
 <canvas id="canvas" width="700" height="450"></canvas>
 </div>  
 
 <div id="difficulty-button-div">
-    <button id="easy" class="difficulty-btn"> <img class='github-icon' src="./docs/assets/images/icons8-github.svg" alt="" > Easy</button>
-    <button id="medium" class="difficulty-btn"> <img class='github-icon'src="./docs/assets/images/icons8-github.svg" alt=""> Medium</button>
-    <button id="hard" class="difficulty-btn"> <img class='github-icon' src="./docs/assets/images/icons8-github.svg" alt=""> Hard</button>
+    <button id="easy" class="difficulty-btn"> <img class='github-icon' src="./docs/assets/images/icons8-github.svg" alt="Button for the easy mode" > Easy</button>
+    <button id="medium" class="difficulty-btn"> <img class='github-icon'src="./docs/assets/images/icons8-github.svg" alt="Button for the medium mode""> Medium</button>
+    <button id="hard" class="difficulty-btn"> <img class='github-icon' src="./docs/assets/images/icons8-github.svg" alt="Button for the hard mode""> Hard</button>
 </div>
 
 <div id="btn-div">
-<button id="start-game"> <img id='svg-filter' src="./docs/assets/images/pull-request.svg" alt=""> Create pull request</button>
+<button id="start-game"> <img id='svg-filter' src="./docs/assets/images/pull-request.svg" alt="Button to start the game"> Create pull request</button>
 </div>
 
 </div>
 </body>
+
 <script src="./scripts/component.js"></script>
 <script src="./scripts/gameengine.js"></script>
 <script src="./scripts/main.js"></script>
+
 </body>
 </html>
