@@ -16,6 +16,7 @@ class Game {
     start(){
         this.interval = setInterval(this.updateGameArea, 1000 / 60) //60fps (1000 / 60)
         this.isRunning = true;
+        beat.pause();
         lost.pause();
         win.pause();
         song.play();
