@@ -14,7 +14,7 @@ let game;
 let difficulty = 50;
 
 let hiddenMenu = document.getElementById('hidden-id');
-let playButton = document.getElementById('lets-play');
+let playButton = document.getElementById('lets-play-btn');
 let showMenu = document.getElementById('show-menu');
 
 showMenu.style.display = 'none';
