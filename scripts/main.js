@@ -13,6 +13,18 @@ const player = new Component(30, 30, 'white', 310, 290, ctx);
 let game;
 let difficulty = 50;
 
+let hiddenMenu = document.getElementById('hidden-id');
+let playButton = document.getElementById('lets-play');
+let showMenu = document.getElementById('show-menu');
+
+showMenu.style.display = 'none';
+
+playButton.addEventListener('click', () => {
+    hiddenMenu.style.display = 'none';
+    showMenu.style.display = 'block';
+});
+
+
 /* game.start(); */
 const startBtn = document.getElementById('start-game');
 
@@ -42,7 +54,7 @@ document.addEventListener('keydown', (e)=>{
 
     };
 
-    if(["ArrowUp","ArrowDown"].indexOf(e.code) > -1) {
+    if(["ArrowUp","ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) > -1) {
         e.preventDefault()
     }
 }, false);
@@ -71,5 +83,7 @@ hard.addEventListener('click', ()=>{
         difficulty = 70;
 });
 
+let song = new Audio("docs/assets/sounds/Untitled.wav");
+song.loop = true;
 
 /* localStorage.setItem('name', `${game.score}`); */

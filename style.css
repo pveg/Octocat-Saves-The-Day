@@ -4,16 +4,61 @@
     src: url(./docs/assets/Silkscreen/slkscrb.ttf);
 }
 
+
 #canvas{
     background-image: url(./docs/assets/images/background2.jpeg);
     background-size: 120%;
     background-position: center;
     border: 2px solid rgba(9, 179, 134, 0.8);
 }
+    #hidden-id{
+        background-image: url("docs/assets/images/backgroundimg.png");
+        background-size: cover;
+        position:fixed;
+        background-position: center;
+        background-color: #ccc;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .hidden-style{
+    font-family: SilkscreenNormal;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 100px;
+    font-size: 2.5em;
+    }
+
+    #lets-play{
+        background-color: rgb(44, 151, 75, 1);
+        border-color: rgba(27,31,36,0.15);
+        color: white;
+        font-size: 14px;
+        padding: 10px 50px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        border-radius: 6px;
+        font-family: SilkscreenNormal;
+        align-self: center;
+    }
+
+    #hidden-h2{
+        color: white;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        margin: 70px;
+    }
 
     body {
         background-image: url("docs/assets/images/backgroundimg.png");
-        background-repeat: no-repeat;
+        background-size:cover;
         background-color: #ccc;
     }
 

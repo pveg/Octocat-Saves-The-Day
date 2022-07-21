@@ -16,6 +16,7 @@ class Game {
     start(){
         this.interval = setInterval(this.updateGameArea, 1000 / 60) //60fps (1000 / 60)
         this.isRunning = true;
+        song.play();
     }
 
     clear(){
@@ -28,7 +29,7 @@ class Game {
         this.player.y=290;
         this.frames= 31 * 60;
         this.points = 0;
-        this.difficulty = 0;
+        this.difficulty = difficulty;
         this.start();
     };
 
@@ -36,6 +37,7 @@ class Game {
         if(this.frames === 0){
             clearInterval(this.interval);
             this.isRunning = false;
+            song.pause();
         }
     };
 
@@ -62,7 +64,6 @@ class Game {
 
         }
     };
-
 
     checkPoint = () =>{
         const crashed = this.obstacles.some((obstacles) => {
