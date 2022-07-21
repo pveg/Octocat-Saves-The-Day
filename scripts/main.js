@@ -24,7 +24,6 @@ playButton.addEventListener('click', () => {
     showMenu.style.display = 'block';
 });
 
-
 /* game.start(); */
 const startBtn = document.getElementById('start-game');
 
@@ -85,5 +84,3 @@ hard.addEventListener('click', ()=>{
 
 let song = new Audio("docs/assets/sounds/Untitled.wav");
 song.loop = true;
-
-/* localStorage.setItem('name', `${game.score}`); */
