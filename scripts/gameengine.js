@@ -27,7 +27,7 @@ class Game {
         this.obstacles = [];
         this.player.x=310;
         this.player.y=290;
-        this.frames= 31 * 60;
+        this.frames = 31 * 60;
         this.points = 0;
         this.difficulty = difficulty;
         this.start();
