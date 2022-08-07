@@ -83,13 +83,13 @@ hard.addEventListener('click', ()=>{
         difficulty = 70;
 });
 
-let song = new Audio("./docs/assets/sounds/Game.wav");
+let song = new Audio("./docs/assets/sounds/gamerunning.wav");
 song.loop = true;
 
-let lost = new Audio("./docs/assets/sounds/lost.wav");
+let lost = new Audio("./docs/assets/sounds/lose.wav");
 lost.loop = false;
 
-let win = new Audio("./docs/assets/sounds/quebbels.wav");
+let win = new Audio("./docs/assets/sounds/winningsong.wav");
 win.loop = false;
 
 let beat = new Audio("./docs/assets/sounds/Beat.wav");
